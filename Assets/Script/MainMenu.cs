@@ -16,6 +16,7 @@ public class MainMenuScript : MonoBehaviour
     public Button levelButton3; // Tombol 3 untuk "LevelTwo"
     public Button levelButton4; // Tombol 4 untuk "Level3"
     public Button levelButton5; // Tombol 5 untuk "Level4"
+    public Button levelButton6; // Tombol 5 untuk "Level5"
     public Button backButton;  // Button in the load menu to go back
     public TMP_Text warningText;
     public TMP_Text warningText2;
@@ -77,6 +78,7 @@ public class MainMenuScript : MonoBehaviour
         levelButton3.onClick.AddListener(() => LoadLevel("LevelTwo"));
         levelButton4.onClick.AddListener(() => LoadLevel("Level3"));
         levelButton5.onClick.AddListener(() => LoadLevel("Level4"));
+        levelButton6.onClick.AddListener(() => LoadLevel("FinalLevel"));
     }
 
     void AssignButtonSounds()
@@ -134,7 +136,7 @@ public class MainMenuScript : MonoBehaviour
         int levelCompleted = PlayerPrefs.GetInt("LevelCompleted", 0);
         Debug.Log("Level completed: " + levelCompleted);
 
-        if (levelCompleted < 4)
+        if (levelCompleted < 5)
         {
             warningText.text = "Level Selection is not yet unlocked!";
             warningText2.text = "";
@@ -175,7 +177,7 @@ public class MainMenuScript : MonoBehaviour
     {
         PlayButtonClickSound();
 
-        if (PlayerPrefs.GetInt("LevelCompleted", 0) < 4) // Jika level belum selesai
+        if (PlayerPrefs.GetInt("LevelCompleted", 0) < 5) // Jika level belum selesai
         {
             warningText.text = "Level Selection is not yet unlocked!";
             showWarning = true; // Tampilkan peringatan

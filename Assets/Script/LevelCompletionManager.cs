@@ -59,12 +59,12 @@ public class LevelCompletionManager : MonoBehaviour
         string currentLevel = SceneManager.GetActiveScene().name;
         
         // Mark level completion based on the current scene name
-        if (currentLevel == "Level4")
+        if (currentLevel == "FinalLevel")
         {
             int levelsCompleted = PlayerPrefs.GetInt("LevelCompleted", 0);
-            if (levelsCompleted < 4)
+            if (levelsCompleted < 5)
             {
-                PlayerPrefs.SetInt("LevelCompleted", 4); // Mark all levels as completed
+                PlayerPrefs.SetInt("LevelCompleted", 5); // Mark all levels as completed
                 PlayerPrefs.Save(); // Save the progress
             }
         }
